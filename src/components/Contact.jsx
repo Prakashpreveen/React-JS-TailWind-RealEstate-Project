@@ -1,5 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   // For RealTime Mail Access: [web3Form]
@@ -49,7 +50,13 @@ const Contact = () => {
         className="max-w-2xl mx-auto text-gray-600 pt-8"
       >
         <div className="flex flex-wrap">
-          <div className="w-full md:w-1/2 text-left">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1.5 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2 text-left"
+          >
             Your Name
             <input
               type="text"
@@ -58,9 +65,15 @@ const Contact = () => {
               name="Name"
               className="w-full border border-gray-300 rounded py-3 px-4 mt-2"
             />
-          </div>
+          </motion.div>
 
-          <div className="w-full md:w-1/2 text-left md:pl-4">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            transition={{ duration: 1.5 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2 text-left md:pl-4"
+          >
             Your Email
             <input
               type="email"
@@ -69,9 +82,15 @@ const Contact = () => {
               name="Email"
               className="w-full border border-gray-300 rounded py-3 px-4 mt-2"
             />
-          </div>
+          </motion.div>
         </div>
-        <div className="my-6 text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="my-6 text-left"
+        >
           Message
           <textarea
             name="Message"
@@ -79,10 +98,16 @@ const Contact = () => {
             required
             className="w-full border border-gray-300 rounded py-3 px-4 mt-2 h-48 resize-none"
           />
-        </div>
-        <button className="bg-blue-600 text-white px-12 py-2 mb-10 rounded">
+        </motion.div>
+        <motion.button
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-blue-600 text-white px-12 py-2 mb-10 rounded"
+        >
           {result ? result : "Send Message"}
-        </button>
+        </motion.button>
       </form>
     </div>
   );
