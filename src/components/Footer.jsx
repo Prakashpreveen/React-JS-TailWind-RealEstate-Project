@@ -56,7 +56,13 @@ const Footer = () => {
         </div>
       </div>
 
-      <div></div>
+      <div className="border-t border-gray-700 py-4 mt-10 text-center text-gray-500">
+        Copyright 2024 © P
+        <span className="text-xs" style={{ verticalAlign: "super" }}>
+          2
+        </span>
+        . All Right Reserved.
+      </div>
     </div>
   );
 };
